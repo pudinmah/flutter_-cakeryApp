@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cakery/data/cake.dart';
+import 'package:flutter_cakery/screen/cakery_detail.dart';
 
 class CakeryPage extends StatelessWidget {
   const CakeryPage({super.key});
@@ -37,13 +38,13 @@ Widget _buildCard(
     padding: const EdgeInsets.all(4),
     child: InkWell(
       onTap: () {
-        // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        //   // return CakeryDetail(
-        //   //   assetPath: cake.imageUrl,
-        //   //   cookieprice: cake.price,
-        //   //   cookiename: cake.name,
-        //   // );
-        // }));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return CakeryDetail(
+            assetPath: cake.imageUrl,
+            cookieprice: cake.price,
+            cookiename: cake.name,
+          );
+        }));
       },
       child: Container(
         decoration: BoxDecoration(
